@@ -10,6 +10,7 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
   var theSum = a + b;
+  
   var theMessage = 'The sum of ' + a + ' and ' + b + ' is ' +theSum + '.';
 
   return [theSum, theMessage];
@@ -31,7 +32,9 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
   var theProduct = a * b;
+  
   var message = 'The product of ' + a + ' and ' + b + ' is ' + theProduct + '.';
+  
   return [theProduct, message];
 }
 
@@ -53,14 +56,20 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  var something = sum(a,b);
-  var finalSum= sum(something[0],c);
+  var numberOneAdd = sum(a,b);
+  
+  var finalSum= sum(numberOneAdd[0],c);
+  
   var questionTwo = multiply(a,b);
+  
   var finalProduct = multiply(questionTwo[0],c);
+  
   var sumAnswer = a + ' and ' + b + ' and ' + c + ' sum to ' + finalSum[0] + '.';
+  
   var multiplyingAnswer = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + finalProduct[0] + '.';
   // console.log(finalProduct[0]);
   // console.log ([finalSum,finalProduct,sumAnswer,multiplyingAnswer]);
+  
   return [finalSum[0],finalProduct[0],sumAnswer,multiplyingAnswer];
 
 }
@@ -85,9 +94,13 @@ var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
   var firstTwoNumbers = sum(testArray[0],testArray[1]);
+  
   var allNumbers = sum(firstTwoNumbers[0],testArray[2]);
+  
   var comment = testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + allNumbers[0] + ' is their sum.';
+  
   console.log (allNumbers);
+  
   return [allNumbers[0], comment];
 }
 
@@ -112,9 +125,13 @@ var numberToMultiply = [2,3,4];//eslint-disable-line
 
 function multiplyArray(multArr) { //eslint-disable-line
   var twoArrayNums = multiply(numberToMultiply[0],numberToMultiply[1]);
+  
   var arrayAnswer = multiply(twoArrayNums[0], numberToMultiply[2]);
+  
   var someComment = 'The numbers ' + numberToMultiply[0] + ',' +numberToMultiply[1] + ',' + numberToMultiply[2] + ' have a product of ' + arrayAnswer[0] + '.';
+  
   console.log(arrayAnswer[0]);
+  
   return [arrayAnswer[0],someComment];
 }
 
@@ -145,12 +162,16 @@ var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
   var firstGo = multiply(testDynamicArray[0],testDynamicArray[1]);
   console.log('firstGo:', firstGo);
+  
   var secondGo = multiply(firstGo[0],testDynamicArray[2]);
   console.log('secondGo:', secondGo);
+  
   var thirdGo = multiply(secondGo[0],testDynamicArray[3]);
   console.log('thirdGo:', thirdGo);
+  
   var finalGo = multiply(thirdGo[0],testDynamicArray[4]);
   console.log('finalGo:', finalGo);
+  
   var result = 'The numbers ' + testDynamicArray[0] + ',' + testDynamicArray[1] + ',' + testDynamicArray[2] + ',' + testDynamicArray[3] + ',' + testDynamicArray[4] + ' have a product of ' + finalGo[0] + '.';
 
   return [finalGo[0], result];
